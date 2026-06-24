@@ -1,0 +1,23 @@
+    <% layout("/layouts/boilerplate") %>
+<div class="overall-div col-8 offset-2">
+    <div class="oneplace-img-container col-8 offset-2">
+        <img src="<%=onePlace.image%>" alt="image" class="card-img-top oneplace-img">
+    
+        <h4>ABOUT</h4>
+        <P><%= onePlace.description %></P>
+    </div>
+
+    <div class="place-info">
+        <h5>Visitor Information</h5>
+        <p><i class="fa-regular fa-calendar" style="color: rgb(225, 129, 50);"></i> <b>Best Time To Visit</b> <br>
+        &nbsp; &nbsp; <%=onePlace.bestTime %></p>
+        <p><i class="fa-solid fa-indian-rupee-sign" style="color: rgb(225, 129, 50);"></i> <b>Entry Fee</b> <br>
+         &nbsp; &nbsp; <%= onePlace.entryFee %></p>
+         <p><i class="fa-regular fa-clock" style="color: rgb(225, 129, 50);"></i> <b>Timimg</b> <br>
+         &nbsp; &nbsp; <%= onePlace.timings %></p>
+         <p><i class="fa-solid fa-location-dot" style="color: rgb(225, 129, 50);"></i> <b>Location</b> <br>
+        &nbsp; &nbsp; <%= onePlace.location %>,<%=onePlace.state%></p>
+    </div>
+    <br>
+
+</div>

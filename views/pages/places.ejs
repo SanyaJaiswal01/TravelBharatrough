@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") %>
+  
+<div class="place-top">
+
+    <img class="place-top" src="https://wallpapercave.com/wp/wp7135785.jpg" alt="state-image" />
+    <div class="card-img-overlay" style="height: 5rem; margin-top: 20rem;">
+    <div class="card-body mt-3 margin-left places-body">
+        <h2> <b><%= state.stateNM.toUpperCase() %></b></h2>
+        <p><i class="fa-solid fa-location-crosshairs" style="color: rgb(15, 15, 16);"></i>Capital :<%= state.capital %> 
+        <br> &nbsp; &nbsp; Region: <%= state.region %></p>
+        </div>
+        </div>
+</div>
+<div class="mt-4">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+        <% for(place of places){ %>
+        <a href="/states/<%=state._id%>" class="listing-link">
+            <div class="card col place-card">
+                <img src="<%= place.image %>" alt="state-image" style="height:15rem;"  class="place-card-img"/>
+                 <button class="btn btn-sm btn-info "><%=place.category%></button>
+                <div class="card-body">
+                <p class="card-text">
+                <%= place.title %> <br>
+                <b>City:<%= place.city %></b> <br>
+                Location: <%= place.location %> <br>
+               </p>
+               <form action="/states/<%=state._id%>/<%=place._id%>">
+                <button class="btn  btn-sm btn-outline-dark">more</button>
+                </form>
+               </div>
+                <br>
+
+                </div>
+        </a>
+        <% } %>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplate")  %>
+<div>
+    <div class="state-header">
+            <h1>Explore All States</h1>
+            <p><i>Waking up in India is like waking up to life itself.</i></p>
+            
+</p>
+
+    </div>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+        <% for(state of allState){ %>
+        <a href="/states/<%=state._id%>" class="listing-link">
+            <div class="card col ">
+                <img src="<%= state.image %>" alt="state-image" style="height:20rem" class="card-img-top"/>
+                <div class="card-img-overlay">
+                <h5 class="card-tile"> <b><%= state.stateNM %></b></h5>
+                <p class="card-text">
+                Capital: <%= state.capital %> <br>
+                <%= state.region %> <br>
+               </p>
+                </div>
+            </div>
+        </a>
+        <% } %>
+    </div>
+
+</div>
+
+
