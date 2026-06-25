@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express=require("express");
 const app=express();
-const port=3000;
+const PORT=process.env.PORT;
 const mongoose=require("mongoose");
-const MONGO_URL="mongodb://127.0.0.1:27017/travelbharat";
+// const MONGO_URL="mongodb://127.0.0.1:27017/travelbharat";
+const MONGO_URL=process.env.MONGO_URL;
 const State=require("./models/state.js");
 const Place=require("./models/place.js");
 const { v4 : uuidv4 }= require("uuid");
@@ -124,6 +126,6 @@ app.use((err,req,res,next)=>{
 
 });
 
-app.listen(port,()=>{
-    console.log("app is listening at port :",port);
+app.listen(PORT,()=>{
+    console.log("app is listening at port :",PORT);
 });
