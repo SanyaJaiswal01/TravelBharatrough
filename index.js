@@ -11,7 +11,7 @@ const { v4 : uuidv4 }= require("uuid");
 const ejsMate=require("ejs-mate");
 const path=require("path");
 const ExpressError=require("./utils/ExpressError.js");
-const wrapAsync=require("./utils/wrapAsync.js");
+const wrapAsync=require("./utils/WrapAsync.js");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -126,6 +126,8 @@ app.use((err,req,res,next)=>{
 
 });
 
-app.listen(PORT,()=>{
-    console.log("app is listening at port :",PORT);
+app.listen(PORT || 8080,()=>{
+    console.log("app is listening at port :",PORT || 8080);
 });
+
+module.exports = app;
